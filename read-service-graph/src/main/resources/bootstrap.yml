@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: read-service
+  cloud:
+    consul:
+      host: localhost:8500
