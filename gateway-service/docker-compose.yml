@@ -1,0 +1,11 @@
+# Docker compose to build and run the gateway service
+version: '2'
+services:
+  read-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    ports: 
+      - "8080:8080"
+  network_node: host
+      

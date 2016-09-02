@@ -1,0 +1,11 @@
+# Docker compose to build and run the write service
+version: '2'
+services:
+  read-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.writeservice
+    ports: 
+      - "8030:8030"
+  network_node: host
+      

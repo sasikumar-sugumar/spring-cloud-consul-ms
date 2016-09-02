@@ -1,0 +1,11 @@
+# Docker compose to build and run the read service
+version: '2'
+services:
+  read-service:
+    build:
+      context: .
+      dockerfile: Dockerfile.readservice
+    ports: 
+      - "8020:8020"
+  network_node: host
+      
