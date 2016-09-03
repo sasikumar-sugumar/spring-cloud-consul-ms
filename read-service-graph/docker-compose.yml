@@ -7,5 +7,5 @@ services:
       dockerfile: Dockerfile.readservice
     ports: 
       - "8020:8020"
-    network_node: host
+    network_mode: host
       

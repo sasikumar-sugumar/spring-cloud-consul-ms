@@ -15,7 +15,7 @@ ARG VERSION=0.0.1
 VOLUME /tmp
 
 # Add the service as app.jar
-ADD target/write-service-${VERSION}-SNAPSHOT.jar app.jar
+ADD write-service-graph/target/write-service-${VERSION}-SNAPSHOT.jar app.jar
 
 # touch the archive for timestamp
 RUN sh -c 'touch /app.jar'

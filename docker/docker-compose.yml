@@ -1,0 +1,23 @@
+version: '2'
+services:
+  gateway-service:
+    build:
+      context: .
+      dockerfile: gateway-service/Dockerfile.gateway
+    ports: 
+      - "8080:8080"
+    network_mode: host
+  read-service:
+    build:
+      context: .
+      dockerfile: read-service-graph/Dockerfile.readservice
+    ports: 
+      - "8020:8020"
+    network_mode: host
+  write-service:
+    build:
+      context: .
+      dockerfile: wite-serice-graph/Dockerfile.writeservice
+    ports: 
+      - "8030:8030"
+    network_mode: host
