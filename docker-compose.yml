@@ -6,18 +6,18 @@ services:
       dockerfile: Dockerfile.gateway
     ports: 
       - "8080:8080"
-    network_node: host
+    network_mode: host
   read-service:
     build:
       context: .
       dockerfile: Dockerfile.readservice
     ports: 
       - "8020:8020"
-    network_node: host
+    network_mode: host
   write-service:
     build:
       context: .
       dockerfile: Dockerfile.writeservice
     ports: 
       - "8030:8030"
-    network_node: host
+    network_mode: host
