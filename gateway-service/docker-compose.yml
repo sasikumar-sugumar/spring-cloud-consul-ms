@@ -7,5 +7,5 @@ services:
       dockerfile: Dockerfile.gateway
     ports: 
       - "8080:8080"
-  network_node: host
+    network_node: host
       
