@@ -11,7 +11,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
     <!-- endbuild -->
   </head>
   <body ng-app="uiServiceApp">
@@ -19,43 +19,59 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+    <form class="form-horizontal" ng-controller="CreatenodeCtrl">
+<fieldset>
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
 
-            <a class="navbar-brand" href="#/">uiService</a>
-          </div>
+<!-- change col-sm-N to reflect how you would like your column spacing (http://getbootstrap.com/css/#forms-control-sizes) -->
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+<!-- Form Name -->
+<legend>Neo4j Node Editor</legend>
 
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
+<!-- Text input http://getbootstrap.com/css/#forms -->
+<div class="form-group">
+  <label for="nodeLabel" class="control-label col-sm-2">Node Label</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="nodeLabel" placeholder="Node Name" required="">
+    
+  </div>
+</div>
+<!-- Text input http://getbootstrap.com/css/#forms -->
+<div class="form-group">
+  <label for="attribKey00" class="control-label col-sm-2">Attrib Key</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="attribKey00" placeholder="key" required="">
+    
+  </div>
+</div>
+<!-- Text input http://getbootstrap.com/css/#forms -->
+<div class="form-group">
+  <label for="attribValue00" class="control-label col-sm-2">Attrib Value</label>
+  <div class="col-sm-10">
+    <input type="text" class="form-control" id="attribValue00" placeholder="value" required="">
+    
+  </div>
+</div>
 
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
+
+
+
+<!-- Button http://getbootstrap.com/css/#buttons -->
+<div class="form-group">
+  <label class="control-label col-sm-2" for="submit"></label>
+  <div class="text-left col-sm-10">
+    <button type="submit" id="submit" name="submit" class="btn btn-primary" aria-label="">Save</button>
+    
+  </div>
+</div>
+
+
+
+
+</fieldset>
+</form>
+
 
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -81,6 +97,10 @@
         <script src="scripts/controllers/user.js"></script>
         <script src="scripts/directives/mydirective.js"></script>
         <script src="scripts/services/myservice.js"></script>
+        <script src="scripts/controllers/createnode.js"></script>
+        <script src="scripts/services/node.js"></script>
+        <script src="scripts/services/abstract.js"></script>
+        <script src="scripts/services/config.js"></script>
         <!-- endbuild -->
 </body>
 </html>
