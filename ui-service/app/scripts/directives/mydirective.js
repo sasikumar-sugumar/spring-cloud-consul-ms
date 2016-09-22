@@ -6,7 +6,7 @@
  * @description
  * # myDirective
  */
-angular.module('uiServiceApp')
+applicationModule
   .directive('myDirective', function () {
     return {
       template: '<div></div>',

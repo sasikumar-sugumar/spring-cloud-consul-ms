@@ -4,20 +4,20 @@ services:
     build:
       context: .
       dockerfile: gateway-service/Dockerfile.gateway
-    ports: 
+    ports:
       - "8080:8080"
     network_mode: host
   read-service:
     build:
       context: .
       dockerfile: read-service-graph/Dockerfile.readservice
-    ports: 
+    ports:
       - "8020:8020"
     network_mode: host
   write-service:
     build:
       context: .
       dockerfile: write-service-graph/Dockerfile.writeservice
-    ports: 
+    ports:
       - "8030:8030"
     network_mode: host

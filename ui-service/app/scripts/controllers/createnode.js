@@ -7,12 +7,12 @@
  * # CreatenodeCtrl
  * Controller of the uiServiceApp
  */
-angular.module('uiServiceApp')
-  .controller('CreatenodeCtrl', [
-    '$state',
+var nodeModule = angular.module('node.ctrl', [
+    'node.factory'
+]).controller('CreatenodeCtrl', [
     '$scope',
-    '$stateParams',
-    function($state, $scope, $stateParams) {
+    'Node',
+    function($scope, Node) {
         $scope.node = new Node();
     }
 ]);

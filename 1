@@ -1,5 +1,23 @@
 version: '2'
 services:
+  gateway-service:
+    build:
+      context: .
+      dockerfile: gateway-service/Dockerfile.gateway
+    ports: 
+      - "8080:8080"
+  read-service:
+    build:
+      context: .
+      dockerfile: read-service-graph/Dockerfile.readservice
+    ports: 
+      - "8020:8020"
+  write-service:
+    build:
+      context: .
+      dockerfile: write-service-graph/Dockerfile.writeservice
+    ports: 
+      - "8030:8030"
   consul1:
     image: "progrium/consul:latest"
     container_name: "consul1"
@@ -31,21 +49,3 @@ services:
     command: "-server -join consul1"
     depends_on:
       - consul1
-  gateway-service:
-    build:
-      context: .
-      dockerfile: gateway-service/Dockerfile.gateway
-    ports:
-      - "8080:8080"
-  read-service:
-    build:
-      context: .
-      dockerfile: read-service-graph/Dockerfile.readservice
-    ports:
-      - "8020:8020"
-  write-service:
-    build:
-      context: .
-      dockerfile: write-service-graph/Dockerfile.writeservice
-    ports:
-      - "8030:8030"

@@ -7,8 +7,9 @@
  * # node
  * Factory in the uiServiceApp.
  */
-angular.module('uiServiceApp')
-  .factory('node', ['$http', function($http){
+var nodeFactory = angular.module('node.factory', ['node.config','abstract.factory']);
+nodeFactory
+  .factory('Node', ['$http','AbstractFactory', function($http,AbstractFactory){
     var abstractFactory = new AbstractFactory();
 			var Node = function() {
 				var _node = this;

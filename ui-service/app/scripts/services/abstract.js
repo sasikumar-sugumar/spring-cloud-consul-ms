@@ -7,7 +7,8 @@
  * # abstract
  * Factory in the uiServiceApp.
  */
-angular.module('uiServiceApp')
+var abstractFactory = angular.module('abstract.factory', ['node.config']);
+abstractFactory
   .factory('AbstractFactory', ['$http', 'CONFIG',
             function($http, CONFIG) {
                 var AbstractFactory = function() {

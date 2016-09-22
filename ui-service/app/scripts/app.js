@@ -8,7 +8,7 @@
  *
  * Main module of the application.
  */
-angular
+var applicationModule = angular
   .module('uiServiceApp', [
     'ngAnimate',
     'ngCookies',
@@ -16,7 +16,10 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'node',
+    'node.config',
+    'abstract.factory',
+    'node.factory',
+    'node.ctrl',
   ])
   .config(function ($routeProvider) {
     $routeProvider
