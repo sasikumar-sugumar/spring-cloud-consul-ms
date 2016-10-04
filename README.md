@@ -18,11 +18,11 @@ Each service is built and deployed using Docker. End-to-end integration testing 
 
 This example project demonstrates how to build a new application using microservices, as opposed to a monolith-first strategy, Developers have the advantage of being able to run and develop with each microservice running on their local machine. Adding a new microservice is easy, as the discovery microservice will automatically discover new services running on the cluster.
 
-## Service discovery
+## Service discovery : Consul
 
 This project uses Consul from Hashicorp as a DNS provider for the cluster.
 
-## API gateway
+## API gateway : Zuul
 
 Each microservice will coordinate with Zuul to retrieve API routes for the entire cluster. Using this strategy each microservice in a cluster can be load balanced and exposed through one API gateway. Each service will automatically discover and route API requests to the service that owns the route. This proxying technique is equally helpful when developing user interfaces, as the full API of the platform is available through its own host as a proxy.
 
