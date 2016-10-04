@@ -8,6 +8,7 @@ Demonstrated concepts:
 * Service discovery
 * API gateway
 * Containeization using Docker
+* Neo4j Persistance
 
 ## Docker
 
@@ -25,6 +26,9 @@ This project uses Consul from Hashicorp as a DNS provider for the cluster.
 
 Each microservice will coordinate with Zuul to retrieve API routes for the entire cluster. Using this strategy each microservice in a cluster can be load balanced and exposed through one API gateway. Each service will automatically discover and route API requests to the service that owns the route. This proxying technique is equally helpful when developing user interfaces, as the full API of the platform is available through its own host as a proxy.
 
+## Neo4j Persistance
+
+Each microservice reads and write to a neo4j datastore using spring data
 
 
 # License
