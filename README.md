@@ -1,4 +1,5 @@
-Spring Cloud Example
+# Spring Cloud Example
+
 An example project that demonstrates an end-to-end cloud-native platform using Spring Cloud for building a practical microservices architecture.
 
 Demonstrated concepts:
