@@ -37,8 +37,8 @@ before_install:
     - sudo mv docker-compose /usr/local/bin
     - git clone https://github.com/sasikumar-sugumar/docker-deploy-scripts
     - chmod +x docker-deploy-scripts/docker-push.sh
-    - chmod +x docker-deploy-scripts/ecs-deploy.sh
-    - chmod +x docker-deploy-scripts/ecs-push
+    #- chmod +x docker-deploy-scripts/ecs-deploy.sh
+    #- chmod +x docker-deploy-scripts/ecs-push
 
 before_script:
   - docker-compose up --build
@@ -51,4 +51,4 @@ after_success:
    # comment
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
     - docker-deploy-scripts/docker-push.sh
-    - docker-deploy-scripts/ecs-deploy.sh
+   # - docker-deploy-scripts/ecs-deploy.sh
