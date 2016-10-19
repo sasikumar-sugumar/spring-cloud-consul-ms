@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: gateway-service/Dockerfile.gateway
     ports:
-      - "8080"
+      - "8080:8080"
     network_mode: host
   read-service:
     build:
