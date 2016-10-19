@@ -21,7 +21,7 @@ services:
       context: .
       dockerfile: read-service-graph/Dockerfile.readservice
     ports:
-      - "8020"
+      - "8020:8020"
     network_mode: host
   write-service:
     build:
