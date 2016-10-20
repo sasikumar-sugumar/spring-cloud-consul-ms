@@ -1,14 +1,12 @@
-# Docker file for the Read Service
+# Docker file for the Write Service
 #
 # Version 0.0.1
 
 #jdk image
 FROM frolvlad/alpine-oraclejdk8:slim
 
-# install
-
 # label for the image
-LABEL Description="Read Service" Version="0.0.1"
+LABEL Description="Write Service" Version="0.0.1"
 
 # the version of the archive
 ARG VERSION=0.0.1
@@ -17,7 +15,7 @@ ARG VERSION=0.0.1
 VOLUME /tmp
 
 # Add the service as app.jar
-ADD read-service-graph/target/read-service-${VERSION}-SNAPSHOT.jar app.jar
+ADD target/write-service-${VERSION}-SNAPSHOT.jar app.jar
 
 # touch the archive for timestamp
 RUN sh -c 'touch /app.jar'
