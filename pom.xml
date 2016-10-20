@@ -11,8 +11,6 @@
     <modules>
         <module>read-service-graph</module>
        <module>write-service-graph</module>
-       <module>gateway-service</module>
-       <module>graph</module>
     </modules>
 
     <parent>
