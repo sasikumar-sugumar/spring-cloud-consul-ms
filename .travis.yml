@@ -1,5 +1,7 @@
 sudo: required
 
+language: java
+
 services:  
     - docker
 
@@ -44,8 +46,7 @@ before_script:
   - docker-compose up --build
 
 script:  
-    - docker version
-    - docker-compose version
+    - mvn install
     
 after_success:
    # comment
