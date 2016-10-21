@@ -48,6 +48,7 @@ before_script:
 script:  
     - mvn install
     - docker build -t eurosasi/graph-read-service -f read-service-graph/Dockerfile.readservice .
+    - docker build -t eurosasi/graph-write-service -f write-service-graph/Dockerfile.writeservice .
 
     
 after_success:
