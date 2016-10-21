@@ -49,6 +49,8 @@ script:
     - mvn install
     - docker build -t eurosasi/graph-read-service -f read-service-graph/Dockerfile.readservice .
     - docker build -t eurosasi/graph-write-service -f write-service-graph/Dockerfile.writeservice .
+    - docker build -t eurosasi/gateway-service -f gateway-service/Dockerfile.gateway .
+
 
     
 after_success:
@@ -56,4 +58,5 @@ after_success:
     - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASSWORD
     - docker-deploy-scripts/docker-push.sh -t eurosasi/graph-read-service -r eurosasi/graph-read-service
     - docker-deploy-scripts/docker-push.sh -t eurosasi/graph-write-service -r eurosasi/graph-write-service
+    - docker-deploy-scripts/docker-push.sh -t eurosasi/gateway-service -r eurosasi/gateway-service
    # - docker-deploy-scripts/ecs-deploy.sh
