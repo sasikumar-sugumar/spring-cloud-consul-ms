@@ -13,6 +13,7 @@ services:
     build:
       context: .
       dockerfile: gateway-service/Dockerfile.gateway
+    image: eurosasi/gateway-service
     ports:
       - "8080:8080"
     network_mode: host
@@ -20,6 +21,7 @@ services:
     build:
       context: .
       dockerfile: read-service-graph/Dockerfile.readservice
+    image: eurosasi/graph-read-service
     ports:
       - "8020:8020"
     network_mode: host
@@ -27,6 +29,7 @@ services:
     build:
       context: .
       dockerfile: write-service-graph/Dockerfile.writeservice
+    image: eurosasi/graph-write-service
     ports:
       - "8030:8030"
     network_mode: host
