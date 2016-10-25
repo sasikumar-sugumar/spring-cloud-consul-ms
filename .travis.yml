@@ -10,9 +10,9 @@ env:
         - DOCKER_VERSION=1.11.2-0~trusty
         - DOCKER_COMPOSE_VERSION=1.8.0
         - IMAGE_NAME=neo4j-read-SERVICE
-        - CLUSTER=bootiful
-        - TASK_DEFINITION=web
-        - SERVICE=read-service
+        - CLUSTER=catalog-cluster
+        - TASK_DEFINITION=graph-read-service
+        - SERVICE=catalog-read-service
         - REMOTE_IMAGE_URL=eurosasi/graph-read-service
         - secure: wJ50Kci5lJt3pgF2cNg0rPug/U/sm/9rWkZX/eIY89yfSAa8DaHWM3fCPfuEw1U95Kc6wRk36YA+f3NwL/wGbE6SVE0G+Va5FcH1Ni0kF3zGGkh67RDVXM4XlMWx2AN25kbP5DyUDHURkNNXEqDkjhJIizENuXLFKsRsa0jkZSeU3uzP8i0jH42JGLjEcqEsTUazXakfCbPsitXZCVliieHrU1AdElmfDsuzeROoOIiP1uDG7ggNu/PAmk+4MfJOafPiQuPjVe6fW7bY5RQUcZ0jkJh99fjGNpjo5SwOQ/VCs05X2hB+1AJY5a04+i/Cj5UbUOYK6Ksm0XV6+GlVQcK20ryyg9FCHvWOzwBx4mT5prWgFajV7zQTgJzo99cpwr9ZyulRyMxXqj53rIH+yDT87+byuFpTl+eD5GfZfDFrCmsak3M5rgNXFz14Ost2ByeyycnVAMCBytNtn8pMRZm5ukbND9lh28q7pvBw/Wy5lyL8mujxZ3xUas4bmre8YLfkZY760FSNiCXCeX3OviNnlTKdGlBVBG4WQLkC9NkA33qKnNSe1wQljLius05mJf+mwEtR7FczISOJ4xPIQHlX+HvU9omS6azZaZZJbHv7OsbLcmuxRVWQ4JjsnsK9KValTiF5BEyck1Kq87FxkvKfD6sKwuQD/oHcmdmaV88=
         - secure: qp/H21F8EfQgl/cipJrU3vNGsnpEiqqPrCFMT3JvRrhTJWjE2qmCQ6tLUlHT8GJfR8j99XRZuS0QODtYOnn1Q7y413AsrkhNJL5TxTLO1H8Ec+Qozh6JpMt02sJuNfFfNeT1NO5kQN2xaPP4Ev73uMw1uNHZv+bZ4JWugvIP7hvp9u1TwWi0l7U8zs3WUMFq/zb58p09l3hzSOZ7HlyoQpGBlAMU4+jvOAr31ADxw4215rBX98sKHuftNZ5PDC6i9+rzgcKnxQQuNOfOr2vMN8jvOhuiRmr7/G1UH4oaTgN5GHtt7YVsQQT00uhF22aVwXEQGNiGXkNunu2L89A4yLY9nUkY1ZJ0hPob195gMNYFYtfQzTMjAqVXRGcYxaLk4+AlarnDdVlSRhDX0oU6JIrjDmk1va3B2Nvg3+g6vL+8vAFy96QwI8xlo15/FsgncjZthvRCmTFwO7Z0a7U/BGjzh/nY0EVdY0WieL1o3gxYCZuT4bi8tbluamqxCbRz107AfIsPQ3e2Cwd9o0M+F9Ggp6kYBxQT7FiU+ANE7yoYwMwGPizlp4pAc4nrKVHMG96X0B8630YzfTnGrGtY0sKlwZfxfsw7YMt88ALj1TI+G7AdEoeEyqf7QPUEQkZMgUZrKbyKfcBS6/nR9cUR9rYqVW+dSTk2o4NoAE+xkzs=
@@ -60,4 +60,4 @@ after_success:
     - docker-deploy-scripts/docker-push.sh -t eurosasi/graph-read-service -r eurosasi/graph-read-service
     - docker-deploy-scripts/docker-push.sh -t eurosasi/graph-write-service -r eurosasi/graph-write-service
     - docker-deploy-scripts/docker-push.sh -t eurosasi/gateway-service -r eurosasi/gateway-service
-   # - docker-deploy-scripts/ecs-deploy.sh
+    - docker-deploy-scripts/ecs-deploy.sh
