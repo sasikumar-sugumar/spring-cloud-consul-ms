@@ -16,20 +16,30 @@ services:
     image: eurosasi/gateway-service
     ports:
       - "8080:8080"
-    network_mode: host
   read-service:
     build:
       context: .
       dockerfile: read-service-graph/Dockerfile.readservice
     image: eurosasi/graph-read-service
     ports:
-      - "8020:8020"
-    network_mode: host
+      - "8020"
+  ha-read-service:
+    image: tutum/haproxy
+    links:
+      - read-service
+  ports:
+      - "8020:80"
   write-service:
     build:
       context: .
       dockerfile: write-service-graph/Dockerfile.writeservice
     image: eurosasi/graph-write-service
     ports:
-      - "8030:8030"
-    network_mode: host
+      - "8030"
+  ha-write-service:
+    image: tutum/haproxy
+    links:
+      - write-service
+  ports:
+      - "8030:80"
+  
