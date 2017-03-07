@@ -3,5 +3,5 @@ spring:
     name: gateway
   cloud:
     consul:
-      host: localhost
+      host: consul1
       port: 8500
