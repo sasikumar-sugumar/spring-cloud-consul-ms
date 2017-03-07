@@ -3,4 +3,5 @@ spring:
     name: write-service
   cloud:
     consul:
-      host: localhost:8500
+      host: consul1
+      port: 8500
