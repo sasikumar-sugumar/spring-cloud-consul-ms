@@ -42,4 +42,10 @@ services:
       - write-service
     ports:
       - "8030:80"
+  eureka-server:
+    build:
+      context: .
+      dockerfile: eureka-server/Dockerfile.eurekaserver
+    ports: 
+      - "8761:8761"
   
