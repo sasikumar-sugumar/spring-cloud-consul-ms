@@ -27,7 +27,7 @@ services:
     image: tutum/haproxy
     links:
       - read-service
-  ports:
+    ports:
       - "8020:80"
   write-service:
     build:
@@ -40,6 +40,6 @@ services:
     image: tutum/haproxy
     links:
       - write-service
-  ports:
+    ports:
       - "8030:80"
   
